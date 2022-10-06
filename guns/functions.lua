@@ -22,14 +22,16 @@ GiveWeaponToPed(
 	bForceInHand (boolean)
 )
 ]] --
+local gunPrefix = "weapon_"
+
 function giveWeapon(hashGun)
-    GiveWeaponToPed(GetPlayerPed(-1), GetHashKey(hashGun), 999, false, false)
+    GiveWeaponToPed(GetPlayerPed(-1), GetHashKey(gunPrefix .. hashGun), 999, false, false)
 end
 
 -- flashlight, suppressor (silenciador)
 function giveWeaponComponent(weaponHash, component)
-    if HasPedGotWeapon(GetPlayerPed(-1), GetHashKey(weaponHash), false) then
-        GiveWeaponComponentToPed(GetPlayerPed(-1), GetHashKey(weaponHash), GetHashKey(component))
+    if HasPedGotWeapon(GetPlayerPed(-1), GetHashKey(gunPrefix .. weaponHash), false) then
+        GiveWeaponComponentToPed(GetPlayerPed(-1), GetHashKey(gunPrefix .. weaponHash), GetHashKey(component))
     else
         notify("~r~You don't have the gun")
     end
