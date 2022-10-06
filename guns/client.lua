@@ -16,6 +16,11 @@ Citizen.CreateThread(function()
             giveWeapon(gunPrefix .. "pistol") -- gun's name without 'weapon_'
             giveWeapon(gunPrefix .. "assaultrifle")
             giveWeapon(gunPrefix .. "rpg")
+
+            -- https://wiki.rage.mp/index.php?title=Weapons_Components
+            giveWeaponComponent("weapon_pumpshotgun", "COMPONENT_AT_SR_SUPP")
+            giveWeaponComponent("weapon_pumpshotgun", "COMPONENT_AT_SR_FLSH")
+
             alert("~b~Given weapons with ~INPUT_VEH_HEADLIGHT~") -- ~b~ color blue in text / INPUT_VEH_HEADLIGHT -> show key in dialog
         end
     end

@@ -25,3 +25,12 @@ GiveWeaponToPed(
 function giveWeapon(hashGun)
     GiveWeaponToPed(GetPlayerPed(-1), GetHashKey(hashGun), 999, false, false)
 end
+
+-- flashlight, suppressor (silenciador)
+function giveWeaponComponent(weaponHash, component)
+    if HasPedGotWeapon(GetPlayerPed(-1), GetHashKey(weaponHash), false) then
+        GiveWeaponComponentToPed(GetPlayerPed(-1), GetHashKey(weaponHash), GetHashKey(component))
+    else
+        notify("~r~You don't have the gun")
+    end
+end
