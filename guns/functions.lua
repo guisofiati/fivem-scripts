@@ -1,16 +1,4 @@
--- alert: show above the screen a dialog
-function alert(message)
-    BeginTextCommandDisplayHelp("STRING")
-    AddTextComponentString(message)
-    EndTextCommandDisplayHelp(0, 0, 1, -1)
-end
-
--- notify: show above the minimap a dialog
-function notify(message)
-    SetNotificationTextEntry("STRING")
-    AddTextComponentString(message)
-    DrawNotification(true, false)
-end
+local utils = require("/[globals]/utils")
 
 --[[
     -- GIVE_WEAPON_TO_PED
@@ -33,6 +21,6 @@ function giveWeaponComponent(weaponHash, component)
     if HasPedGotWeapon(GetPlayerPed(-1), GetHashKey(gunPrefix .. weaponHash), false) then
         GiveWeaponComponentToPed(GetPlayerPed(-1), GetHashKey(gunPrefix .. weaponHash), GetHashKey(component))
     else
-        notify("~r~You don't have the gun")
+        utils.notify("~r~You don't have the gun")
     end
 end

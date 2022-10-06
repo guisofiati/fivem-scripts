@@ -1,15 +1,3 @@
-function alert(message)
-    BeginTextCommandDisplayHelp("STRING")
-    AddTextComponentString(message)
-    EndTextCommandDisplayHelp(0, 0, 1, -1)
-end
-
-function notify(message)
-    SetNotificationTextEntry("STRING")
-    AddTextComponentString(message)
-    DrawNotification(true, false)
-end
-
 function spawnVehicle(vehicleName)
     local vehicle = GetHashKey(vehicleName)
     RequestModel(vehicle)

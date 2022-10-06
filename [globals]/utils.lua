@@ -1,5 +1,6 @@
 module = {}
 
+-- alert: show above the screen a dialog
 function module.alert(message)
     BeginTextCommandDisplayHelp("STRING")
     AddTextComponentString(message)
