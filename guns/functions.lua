@@ -1,5 +1,3 @@
-local utils = require("/[globals]/utils")
-
 --[[
     -- GIVE_WEAPON_TO_PED
 GiveWeaponToPed(
@@ -21,6 +19,6 @@ function giveWeaponComponent(weaponHash, component)
     if HasPedGotWeapon(GetPlayerPed(-1), GetHashKey(gunPrefix .. weaponHash), false) then
         GiveWeaponComponentToPed(GetPlayerPed(-1), GetHashKey(gunPrefix .. weaponHash), GetHashKey(component))
     else
-        utils.notify("~r~You don't have the gun")
+        notify("~r~You don't have the gun")
     end
 end

@@ -1,5 +1,3 @@
-module = {}
-
 -- alert: show above the screen a dialog
 function module.alert(message)
     BeginTextCommandDisplayHelp("STRING")
@@ -13,5 +11,3 @@ function module.notify(message)
     AddTextComponentString(message)
     DrawNotification(true, false)
 end
-
-return module

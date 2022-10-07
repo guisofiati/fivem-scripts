@@ -1,8 +1,7 @@
-local utils = require("/[globals]/utils")
 -- f8 -> /clearguns
 RegisterCommand("clearguns", function()
     RemoveAllPedWeapons(GetPlayerPed(-1), true)
-    utils.notify("~r~Cleared inventory with weapons") -- ~r~ -> color red in text
+    notify("~r~Cleared inventory with weapons") -- ~r~ -> color red in text
 end)
 
 Citizen.CreateThread(function()
@@ -22,7 +21,7 @@ Citizen.CreateThread(function()
             giveWeaponComponent("pumpshotgun", "COMPONENT_AT_SR_SUPP")
             giveWeaponComponent("pumpshotgun", "COMPONENT_AT_SR_FLSH")
 
-            utils.alert("~b~Given weapons with ~INPUT_VEH_HEADLIGHT~") -- ~b~ color blue in text / INPUT_VEH_HEADLIGHT -> show key in dialog
+            alert("~b~Given weapons with ~INPUT_VEH_HEADLIGHT~") -- ~b~ color blue in text / INPUT_VEH_HEADLIGHT -> show key in dialog
         end
     end
 end)
